@@ -22,8 +22,8 @@ class KnowledgeBase(object):
             if fact not in self.facts:
                 #print("Asserting {!r}".format(fact))
                 self.facts.append(fact)
-            else: print("The Fact already exist in KB")
-        else: print("Type is not a fact")
+       #     else: print("The Fact already exist in KB")
+       # else: print("Type is not a fact")
         
     def kb_ask(self, fact):
         answ = False
@@ -32,16 +32,9 @@ class KnowledgeBase(object):
                 bind = match(fac.statement, fact.statement)
                 if (bind != False):
                     if(answ == False):
-                        answ =ListOfBindings()
+                        answ = ListOfBindings()
                     answ.add_bindings(bind,fact)
-                else: continue
+                else:
+                    continue
         return answ
-        """Ask if a fact is in the KB
-
-        Args:
-            fact (Fact) - Fact to be asked
-
-        Returns:
-            ListOfBindings|False - ListOfBindings if result found, False otherwise
-        """
        # print("Asking {!r}".format(fact))
