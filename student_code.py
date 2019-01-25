@@ -19,18 +19,11 @@ class KnowledgeBase(object):
 
     def kb_assert(self, fact):
         if (fact.name == 'fact'):
-            there = True
-            for fac in self.facts:
-                if fac == fact:
-                    there = False
-                    break
-            if there:
+            if fact not in self.facts:
                 #print("Asserting {!r}".format(fact))
                 self.facts.append(fact)
-           # else:
-                #print("The Fact already exist in KB")
-        else:
-            print("Type is not a fact")
+            else: print("The Fact already exist in KB")
+        else: print("Type is not a fact")
         
     def kb_ask(self, fact):
         answ = False
